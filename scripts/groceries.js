@@ -75,6 +75,9 @@ var products = [
 	}
 ];
 
+products.sort(function(a, b) { 
+    return a.price - b.price;
+})
 
 
 // given restrictions provided, make a reduced list of products
@@ -122,5 +125,5 @@ function getItemPrice(chosenProduct){
 			return products[i].price;
 		}
 	}
-
 }
+
