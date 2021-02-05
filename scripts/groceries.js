@@ -4,25 +4,77 @@
 
 var products = [
 	{
-		name: "brocoli",
+		name: "broccoli",
 		vegetarian: true,
 		glutenFree: true,
+		organic: true, 
 		price: 1.99
 	},
 	{
 		name: "bread",
 		vegetarian: true,
 		glutenFree: false,
+		organic: false, 
 		price: 2.35
 	},
 	{
 		name: "salmon",
 		vegetarian: false,
 		glutenFree: true,
+		organic: false, 
 		price: 10.00
+	},
+	{
+		name: "carrot",
+		vegetarian: true,
+		glutenFree: true,
+		organic: true, 
+		price: 2.63
+	},
+	{
+		name: "chicken",
+		vegetarian: false,
+		glutenFree: true,
+		organic: false, 
+		price: 6.87
+	},
+	{
+		name: "cereal",
+		vegetarian: false,
+		glutenFree: false,
+		organic: false, 
+		price: 2.97
+	},
+	{
+		name: "cheese",
+		vegetarian: false,
+		glutenFree: false,
+		organic: false, 
+		price: 5.14
+	},
+	{
+		name: "white fish",
+		vegetarian: false,
+		glutenFree: true,
+		organic: false, 
+		price: 13.50
+	},
+	{
+		name: "honey",
+		vegetarian: false,
+		glutenFree: false,
+		organic: true, 
+		price: 1.89
+	},
+	{
+		name: "onion",
+		vegetarian: true,
+		glutenFree: true,
+		organic: true, 
+		price: 2.22
 	}
 ];
-	
+
 
 
 // given restrictions provided, make a reduced list of products
@@ -35,6 +87,15 @@ function restrictListProducts(prods, restriction) {
 			product_names.push(prods[i].name);
 		}
 		else if ((restriction == "GlutenFree") && (prods[i].glutenFree == true)){
+			product_names.push(prods[i].name);
+		}
+		else if ((restriction == "VegetarianANDGluten-Free") && (prods[i].glutenFree == true) && (prods[i].vegetarian == true)){
+			product_names.push(prods[i].name);
+		}
+		else if ((restriction == "Organic") && (prods[i].organic == true)){
+			product_names.push(prods[i].name);
+		}
+		else if ((restriction == "Non-Organic") && (prods[i].organic == false)){
 			product_names.push(prods[i].name);
 		}
 		else if (restriction == "None"){
@@ -53,4 +114,13 @@ function getTotalPrice(chosenProducts) {
 		}
 	}
 	return totalPrice;
+}
+
+function getItemPrice(chosenProduct){
+	for (let i=0; i<products.length; i+=1) {
+		if (chosenProduct.indexOf(products[i].name) > -1){
+			return products[i].price;
+		}
+	}
+
 }

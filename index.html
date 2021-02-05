@@ -7,6 +7,14 @@
 
 <body>
 
+<div>
+    <h1> Sam's Mart </h1>
+     <a href="https://samsmartinc.com/">
+      <img src="images/logo.png" alt="Facebook" class = "logo">
+    </a>
+
+</div>
+
 <!-- Tab links, each one with an onclick event associated with it -->
 <div class="tab">
   <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
@@ -21,9 +29,14 @@
 	Choose a Category:
 	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
 	<option value=""></option>
+
 	<option value="Vegetarian">Vegetarian</option>
-    <option value="GlutenFree">GlutenFree</option>
-    <option value="None">None</option>
+  <option value="GlutenFree">Gluten Free</option>
+  <option value="VegetarianANDGluten-Free">Vegetarian and Gluten-Free</option>
+  <option value="Organic">Organic</option>
+  <option value="Non-organic">Non-Organic</option>
+  <option value="None">None</option>
+
 	</select>
 </div>
 
@@ -43,7 +56,12 @@
   <div id="displayCart"></div>
 </div>
 
+<div class="footer">
+    <p class="copyright">Website created by Ruchira, Sam, Batuhan, and Kene</p>
+</div>
+
 <script src="scripts/groceries.js"></script>
+
 <script src="scripts/main.js"></script>
 
 </body>
