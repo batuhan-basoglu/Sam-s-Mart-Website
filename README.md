@@ -4,7 +4,7 @@ The website of a Sam's Grocery Store made by Ruchira Perrera, Sam Oyediran, Batu
 
 https://arctichawk1.github.io/SEG3125-LAB2/
 
-#Authors
+# Authors
 
 - Batuhan Basoglu, 300001274 - ArcticHawk1
 - Ruchira Perrera, 8714992 - ruchirawp
