@@ -54,16 +54,30 @@ function populateListProductChoices(slct1, slct2) {
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(productName));
-
-		//get price of an item 
 		var itemPrice = getItemPrice(productName);
-		label.appendChild(document.createTextNode(" $" + itemPrice));
+		label.appendChild(document.createTextNode(productName + " $" + itemPrice));
+
+		// //get price of an item 
+		// var itemPrice = getItemPrice(productName);
+		// label.appendChild(document.createTextNode(" $" + itemPrice));
+
 
 		s2.appendChild(label);
 		
 		// create a breakline node and add in HTML DOM
-		s2.appendChild(document.createElement("br"));    
+		s2.appendChild(document.createElement("br"));   
+		
+		//create <img src="">
+		var prodImg = document.createElement("img");
+		prodImg.src = getProductImg(productName);
+		// prodImg = document.getElementById("displayProduct");
+		// console.log("trial", prodImg.src);
+		s2.appendChild(prodImg);
+
+		//use this to space the images 
+		s2.appendChild(document.createElement("br"));
+		s2.appendChild(document.createElement("br"));
+
 	}
 }
 	
@@ -83,12 +97,23 @@ function selectedItems(){
 	var para = document.createElement("P");
 	para.innerHTML = "You selected : ";
 	para.appendChild(document.createElement("br"));
+
+	
+
 	for (i = 0; i < ele.length; i++) { 
 		if (ele[i].checked) {
 			para.appendChild(document.createTextNode(ele[i].value + "     $" + getItemPrice(ele[i].value)));
 			para.appendChild(document.createElement("br"));
+			//adding the image 
+			console.log(getProductImg(ele[i].value));
+			var cartImg = para.appendChild(document.createElement("img"));
+			cartImg.src = getProductImg(ele[i].value);
+			// para.appendChild(cartImg);
+			para.appendChild(document.createElement("br"));
 			chosenProducts.push(ele[i].value);
+	
 		}
+		
 	}
 		
 	// add paragraph and total price
